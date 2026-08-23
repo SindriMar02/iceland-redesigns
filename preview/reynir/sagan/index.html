@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="is">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Zalando+Sans+Expanded:wght@300;400;500;600&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Gloock:ital@0;1&family=Instrument+Serif:ital@0;1&family=Karla:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,800&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Caveat:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Young+Serif&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Marcellus&family=Bitter:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Lusitana:wght@400;700&family=Oranienbaum&family=Archivo:wdth,wght@125,600..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700,900&f[]=ranade@400,500,700&f[]=chillax@300,400,500,600,700&f[]=zodiak@400,401,700&display=swap"
+      rel="stylesheet"
+    />
+    
+
+
+
+    <!--
+      STALE-DEPLOY WATCHDOG. Must be inline and must run before the bundle,
+      because it exists for the one failure the app cannot catch itself.
+
+      GitHub Pages serves this file with cache-control: max-age=600, while every
+      deploy replaces dist/ wholesale and renames the content-hashed chunks. A
+      visitor holding a ten-minute-old copy of this HTML therefore asks for an
+      assets/index-<oldhash>.js that no longer exists. That is the module ENTRY:
+      it 404s, no bundled code runs at all, and the visitor sits on a permanently
+      white page. (Measured 2026-08-14: #root left with 0 children, 0 characters.
+      It is why Tannlæknavaktin would not open until a refresh AND a browser quit.)
+
+      A reload fixes it, because reloading revalidates this HTML and gets the new
+      filenames. So: reload once, and only once. The flag is the same key the app
+      uses in src/StaleBuildBoundary.tsx, so the two share a single retry between
+      them and cannot ping-pong. sessionStorage, so it dies with the tab and a
+      later visit gets a fresh automatic recovery.
+
+      Capture phase: resource load errors do not bubble.
+    -->
+    <script>
+      (function () {
+        var KEY = 'sndr:stale-build-reload'
+        function claim() {
+          try {
+            if (sessionStorage.getItem(KEY)) return false
+            sessionStorage.setItem(KEY, String(Date.now()))
+            return true
+          } catch (e) { return true }
+        }
+        window.addEventListener('error', function (e) {
+          var t = e.target
+          if (!t || t === window) return
+          var tag = t.tagName
+          if (tag !== 'SCRIPT' && tag !== 'LINK') return
+          // Only our own build output. A dead Google Font or a blocked third
+          // party must never be able to reload a client's page in a loop.
+          var url = t.src || t.href || ''
+          if (url.indexOf('/assets/') === -1) return
+          if (claim()) window.location.reload()
+        }, true)
+
+        /**
+         * Last resort. If the reload above did not help, the current build is
+         * genuinely missing a file and no bundled code will ever run — nothing
+         * inside the app can draw anything, so the message has to live here.
+         * Gated on the entry bundle having EXECUTED (main.tsx sets the flag),
+         * not on #root being non-empty: the app's outer Suspense fallback is
+         * null, so a healthy page has an empty #root for as long as its route
+         * chunk takes to arrive, and a slow phone would be accused wrongly.
+         */
+        window.addEventListener('DOMContentLoaded', function () {
+          setTimeout(function () {
+            var fb = document.getElementById('boot-fallback')
+            if (!fb || window.__sndrAppBooted) return
+            fb.hidden = false
+          }, 8000)
+        })
+      })()
+    </script>
+    <script type="module" crossorigin src="/iceland-redesigns/assets/index-ED6ZIh1Q.js"></script>
+    <link rel="stylesheet" crossorigin href="/iceland-redesigns/assets/index-CZxiti_Y.css">
+  
+    <title>Sagan og myndasafnið — Reynir bakarí</title>
+    <meta name="description" content="Fjölskyldubakarí á Dalvegi síðan 1994. Sagan af Reyni bakara og myndasafn úr bakaríinu sjálfu, myndað á einum vinnumorgni." />
+    <link rel="canonical" href="https://sindrimar02.github.io/iceland-redesigns/preview/reynir/sagan/" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Reynir bakarí" />
+    <meta property="og:locale" content="is_IS" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta property="og:title" content="Sagan og myndasafnið — Reynir bakarí" />
+    <meta property="og:description" content="Fjölskyldubakarí á Dalvegi síðan 1994. Sagan af Reyni bakara og myndasafn úr bakaríinu sjálfu, myndað á einum vinnumorgni." />
+    <meta property="og:url" content="https://sindrimar02.github.io/iceland-redesigns/preview/reynir/sagan/" />
+    <meta property="og:image" content="https://sindrimar02.github.io/iceland-redesigns/reynir/gallery/gal-11.webp" />
+    <meta property="og:image:alt" content="Reynir bakarí, Dalvegur 4, 201 Kópavogur" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sagan og myndasafnið — Reynir bakarí" />
+    <meta name="twitter:description" content="Fjölskyldubakarí á Dalvegi síðan 1994. Sagan af Reyni bakara og myndasafn úr bakaríinu sjálfu, myndað á einum vinnumorgni." />
+    <meta name="twitter:image" content="https://sindrimar02.github.io/iceland-redesigns/reynir/gallery/gal-11.webp" />
+    <meta name="geo.region" content="IS" />
+    <meta name="geo.placename" content="Kópavogur" />
+    <meta name="geo.position" content="64.1046006;-21.8755066" />
+    <meta name="ICBM" content="64.1046006, -21.8755066" />
+    <!-- Their monogram, not the wordmark. The script logo is beautiful at
+         header size and completely illegible at 32px — the strokes are hair
+         thin and the capital's swash crosses itself, so every crop of it
+         renders as a gold smudge. This is the initial in their own burgundy
+         and gold, in a serif, drawn to survive the size. -->
+    <link rel="icon" href="/iceland-redesigns/reynir/brand/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/iceland-redesigns/reynir/brand/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/iceland-redesigns/reynir/brand/apple-touch-icon.png" />
+    <meta name="theme-color" content="#131313" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","@id":"https://sindrimar02.github.io/iceland-redesigns/preview/reynir/#bakery","name":"Reynir bakarí","legalName":"Reynir bakari ehf.","vatID":"701195-3029","url":"https://sindrimar02.github.io/iceland-redesigns/preview/reynir/","telephone":"+354 564 4700","email":"reynirbakari@reynirbakari.is","foundingDate":"1994","description":"Handverksbakarí sem framleiðir ferskt bakkelsi, brauð og kökur frá grunni. Einnig veisluþjónusta með kaffihlaðborði.","image":["https://sindrimar02.github.io/iceland-redesigns/reynir/gallery/gal-11.webp","https://sindrimar02.github.io/iceland-redesigns/reynir/pistasiusnudur-bakki.jpg","https://sindrimar02.github.io/iceland-redesigns/reynir/bud.webp"],"logo":"https://sindrimar02.github.io/iceland-redesigns/reynir/brand/logo.webp","priceRange":"$","currenciesAccepted":"ISK","servesCuisine":"Bakery","address":{"@type":"PostalAddress","streetAddress":"Dalvegur 4","postalCode":"201","addressLocality":"Kópavogur","addressCountry":"IS"},"geo":{"@type":"GeoCoordinates","latitude":64.1046006,"longitude":-21.8755066},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"07:00","closes":"17:00"}],"sameAs":["https://www.facebook.com/ReynirBakari","https://www.instagram.com/reynir.bakari"],"areaServed":{"@type":"City","name":"Kópavogur"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Reynir bakarí","item":"https://sindrimar02.github.io/iceland-redesigns/preview/reynir/"},{"@type":"ListItem","position":2,"name":"Persónuvernd og skilmálar","item":"https://sindrimar02.github.io/iceland-redesigns/preview/reynir/sagan/"}]}</script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      /* Faxi's loading curtain paints from the shell, before React exists.
+         A curtain that waits for the app bundle is not a loading screen, it is
+         an epilogue: measured on a 1.6Mbps connection the React-rendered version
+         had not appeared at all by 2.4s, so the visitor watched a white page and
+         then a brief flash. This paints on the first frame instead.
+         Path-gated, wrapped in try/catch: any other route is untouched. */
+      (function () {
+        try {
+          if (!/\/preview\/faxibakery(\/|$)/.test(location.pathname)) return
+          var CREAM = '#F1E4CE', INK = '#1B1712', CARAMEL = '#C2773A', MOSS = '#4C5A41'
+          /* the roll's own geometry: an Archimedean spiral, built not inlined */
+          var d = '', TURNS = 3.6, STEPS = 340, B = 4.6
+          for (var i = 0; i <= STEPS; i++) {
+            var t = (i / STEPS) * TURNS * Math.PI * 2, r = B * t * 0.5
+            d += (i ? 'L' : 'M') + (60 + r * Math.cos(t)).toFixed(2) + ' ' + (60 + r * Math.sin(t)).toFixed(2)
+          }
+          var h = +new Intl.DateTimeFormat('en-GB', { timeZone: 'Atlantic/Reykjavik', hour: '2-digit', hour12: false }).format(new Date()) % 24
+          var line = (h >= 9 && h < 20) ? 'The ovens are on' : 'First batch at 9'
+          var css = document.createElement('style')
+          css.textContent =
+            'html{background:' + CREAM + '}' +
+            '#faxi-boot{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;background:' + CREAM + ';transform:translateY(0);transition:transform 1.15s cubic-bezier(.76,0,.24,1)}' +
+            '#faxi-boot.is-lifting{transform:translateY(-101%)}' +
+            '#faxi-boot .fb-mark{display:flex;flex-direction:column;align-items:center;text-align:center}' +
+            '#faxi-boot svg{display:block;width:clamp(104px,12vw,146px);height:auto;margin-bottom:clamp(14px,2.4vh,26px);animation:fb-turn 1750ms cubic-bezier(.33,0,.15,1) both}' +
+            '#faxi-boot svg path:last-child{stroke-dasharray:1;stroke-dashoffset:1;animation:fb-coil 1750ms cubic-bezier(.33,0,.15,1) forwards}' +
+            '@keyframes fb-coil{to{stroke-dashoffset:0}}' +
+            '@keyframes fb-turn{from{transform:rotate(-32deg) scale(.94)}to{transform:none}}' +
+            '#faxi-boot .fb-w,#faxi-boot .fb-s,#faxi-boot .fb-l{opacity:0;animation:fb-in .7s cubic-bezier(.22,.61,.36,1) forwards}' +
+            '#faxi-boot .fb-w{font-family:"Cabinet Grotesk",system-ui,sans-serif;font-weight:800;font-size:clamp(40px,5.6vw,72px);letter-spacing:-.04em;line-height:.9;color:' + INK + ';animation-delay:875ms}' +
+            '#faxi-boot .fb-s{font-family:"Azeret Mono",ui-monospace,monospace;font-size:9.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:' + MOSS + ';margin-top:9px;animation-delay:1050ms}' +
+            '#faxi-boot .fb-l{font-family:"Azeret Mono",ui-monospace,monospace;font-size:9px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:' + CARAMEL + ';margin-top:20px;animation-delay:1225ms}' +
+            '@keyframes fb-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}' +
+            '@media (prefers-reduced-motion:reduce){#faxi-boot{display:none}}'
+          document.head.appendChild(css)
+          var el = document.createElement('div')
+          el.id = 'faxi-boot'
+          el.setAttribute('role', 'presentation')
+          el.innerHTML =
+            '<div class="fb-mark">' +
+            '<svg viewBox="0 0 120 120" aria-hidden="true">' +
+            '<path d="' + d + '" fill="none" stroke="' + INK + '" stroke-opacity=".08" stroke-width="3.4" stroke-linecap="round"></path>' +
+            '<path d="' + d + '" pathLength="1" fill="none" stroke="' + CARAMEL + '" stroke-width="3.4" stroke-linecap="round"></path>' +
+            '</svg>' +
+            '<div class="fb-w">Faxi</div><div class="fb-s">Bakery &middot; Caf&eacute;</div>' +
+            '<div class="fb-l">' + line + '</div></div>'
+          document.body.appendChild(el)
+          /* the app reads this to know how much of the coil has already played */
+          window.__faxiBootAt = Date.now()
+        } catch (e) {}
+      })()
+    </script>
+    <!-- Sibling of #root, never a child: React clears its own container on the
+         first render, and this must survive the case where React never runs.
+         Names no client and links nowhere, like every other fallback here. -->
+    <div id="boot-fallback" hidden role="alert" style="min-height:100svh;display:grid;place-content:center;gap:18px;padding:32px;text-align:center;background:#faf8f5;color:#1c1a17;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif">
+      <p style="margin:0;font-size:19px;line-height:1.5;max-width:34ch">Síðan náðist ekki að hlaðast. Þetta lagast oftast við að hlaða henni aftur.</p>
+      <button type="button" onclick="try{sessionStorage.removeItem('sndr:stale-build-reload')}catch(e){};location.reload()" style="justify-self:center;min-height:44px;padding:0 22px;border-radius:999px;border:1px solid currentColor;background:transparent;color:inherit;font:inherit;font-size:15px;cursor:pointer">Hlaða síðunni aftur</button>
+    </div>
+  </body>
+</html>

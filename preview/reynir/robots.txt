@@ -1,0 +1,3 @@
+# Preview host — the real robots.txt is generated with REYNIR_SITE_URL set.
+User-agent: *
+Disallow: /
