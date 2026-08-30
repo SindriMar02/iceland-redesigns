@@ -1,0 +1,1 @@
+import{u as a,r as t,M as u}from"./index-B4t1gLI_.js";import{o as r}from"./proxy-7TafSyng.js";function i(o){const e=a(()=>r(o)),{isStatic:s}=t.useContext(u);if(s){const[,n]=t.useState(o);t.useEffect(()=>e.on("change",n),[])}return e}export{i as u};
