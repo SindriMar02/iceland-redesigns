@@ -1,0 +1,3 @@
+# Preview host: the real robots.txt is generated with NYPUGARDAR_SITE_URL set.
+User-agent: *
+Disallow: /
